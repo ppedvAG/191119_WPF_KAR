@@ -5,18 +5,33 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Steuerelemente"
         mc:Ignorable="d"
-        Title="Steuerelemente" Height="450" Width="800">
+        Title="Steuerelemente" Height="535.6" Width="800">
     <Grid>
-        <Label BorderBrush="Black" BorderThickness="2" Content="Das ist eine Beschriftung ..." HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="160"/>
-        <TextBlock Text="Auch das ist eine Beschriftung" HorizontalAlignment="Left" Margin="10,44,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="201"/>
-        <Button Content="Klick mich !!!" HorizontalAlignment="Left" Margin="10,77,0,0" VerticalAlignment="Top" Width="160"/>
-        <Button HorizontalAlignment="Left" Margin="10,101,0,0" VerticalAlignment="Top" Width="160">
+        <Menu VerticalAlignment="Top">
+            <MenuItem Header="Datei">
+                <MenuItem Header="Öffnen"/>
+                <MenuItem Header="Speichern"/>
+                <MenuItem Header="Speichern unter"/>
+                <Separator/>
+                <MenuItem Header="Beenden"/>
+            </MenuItem>
+            <Rectangle Stroke="Gray" Fill="Black" Width="0.5" Height="20"/>
+            <TextBlock Text="🔍 WIN + . 🤗😶☺😎😋😋😃😃🙂😚"/>
+            <TextBox Width="200"/>
+        </Menu>
+
+
+
+        <Label BorderBrush="Black" BorderThickness="2" Content="Das ist eine Beschriftung ..." HorizontalAlignment="Left" Margin="34,45,0,0" VerticalAlignment="Top" Width="160"/>
+        <TextBlock Text="Auch das ist eine Beschriftung" HorizontalAlignment="Left" Margin="34,79,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="201"/>
+        <Button Content="Klick mich !!!" HorizontalAlignment="Left" Margin="34,112,0,0" VerticalAlignment="Top" Width="160"/>
+        <Button HorizontalAlignment="Left" Margin="34,136,0,0" VerticalAlignment="Top" Width="160">
             <Button.Content>
                 <TextBox Width="150" Text="Macht das Sinn ?"/>
             </Button.Content>
         </Button>
-        <PasswordBox HorizontalAlignment="Left" Margin="10,127,0,0" VerticalAlignment="Top" Width="160"/>
-        <RichTextBox HorizontalAlignment="Left" Height="100" Margin="10,149,0,0" VerticalAlignment="Top" Width="160">
+        <PasswordBox HorizontalAlignment="Left" Margin="34,162,0,0" VerticalAlignment="Top" Width="160"/>
+        <RichTextBox HorizontalAlignment="Left" Height="100" Margin="34,184,0,0" VerticalAlignment="Top" Width="160">
             <FlowDocument>
                 <Paragraph>
                     <Run Text="RichTextBox"/>
@@ -28,17 +43,57 @@
         <Image 
             Source="https://www.welt.de/img/satire/mobile157797260/9052508247-ci102l-w1024/a-Golden-Hamster-Standing-on-a-Flower-Pot-Looking-at-Camera-Front-View.jpg"
             Stretch="UniformToFill"
-            HorizontalAlignment="Left" Height="239" Margin="175,10,0,0" VerticalAlignment="Top" Width="223"/>
-        <Image HorizontalAlignment="Left" Height="154" Margin="10,254,0,0" VerticalAlignment="Top" Width="270" Source="Images/katze.jpg"/>
+            HorizontalAlignment="Left" Height="239" Margin="199,45,0,0" VerticalAlignment="Top" Width="223"/>
+        <Image HorizontalAlignment="Left" Height="154" Margin="34,289,0,0" VerticalAlignment="Top" Width="270" Source="Images/katze.jpg"/>
         <TextBox
             AcceptsReturn="True"
             AcceptsTab="True"
             TextWrapping="WrapWithOverflow"
-            HorizontalAlignment="Left" Height="106" Margin="403,11,0,0" VerticalAlignment="Top" Width="120">
+            HorizontalAlignment="Left" Height="106" Margin="427,46,0,0" VerticalAlignment="Top" Width="120">
             <TextBox.Text>
                 Demo für den Textumbruch
             </TextBox.Text>
         </TextBox>
+        <ComboBox SelectedIndex="0" HorizontalAlignment="Left" Margin="552,46,0,0" VerticalAlignment="Top" Width="152">
+            <ComboBoxItem Content="Apfel"/>
+            <ComboBoxItem Content="Birne"/>
+            <ListBoxItem Content="Banane" Background="Red"/>
+            <ComboBoxItem Content="Gurke"/>
+            <Button Content="Mein Button"/>
+            <TextBox Width="100"/>
+        </ComboBox>
+        <CheckBox Content="CheckBox" HorizontalAlignment="Left" Margin="427,162,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.366,0.175" Width="120"/>
+        <CheckBox Content="CheckBox" HorizontalAlignment="Left" Margin="427,182,0,0" VerticalAlignment="Top" Width="120"/>
+        <CheckBox HorizontalAlignment="Left" Margin="427,202,0,0" VerticalAlignment="Top" Width="120">
+            <Button Content="Klick die Box"/>
+        </CheckBox>
+        <RadioButton IsChecked="True" Content="RadioButton" HorizontalAlignment="Left" Margin="552,162,0,0" VerticalAlignment="Top"/>
+        <RadioButton Content="RadioButton" HorizontalAlignment="Left" Margin="552,184,0,0" VerticalAlignment="Top"/>
+        <RadioButton Content="RadioButton" HorizontalAlignment="Left" Margin="552,205,0,0" VerticalAlignment="Top"/>
+
+        <Grid Background="DarkSeaGreen" HorizontalAlignment="Left" Height="100" Margin="661,149,0,0" VerticalAlignment="Top" Width="100">
+            <RadioButton Content="RadioButton" HorizontalAlignment="Left" Margin="10,10,-512.8,-42.2" VerticalAlignment="Top"/>
+            <RadioButton IsChecked="True" Content="RadioButton" HorizontalAlignment="Left" Margin="10,30,0,0" VerticalAlignment="Top"/>
+            <RadioButton Content="RadioButton" HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top"/>
+        </Grid>
+        <Slider
+            TickPlacement="BottomRight"
+            IsSnapToTickEnabled="True"
+            HorizontalAlignment="Left" Margin="342,306,0,0" VerticalAlignment="Top" Width="252"/>
+        <ProgressBar
+            Minimum="0"
+            Maximum="100"
+            Value="77"
+            IsIndeterminate="False"
+            HorizontalAlignment="Left" Height="10" Margin="342,342,0,0" VerticalAlignment="Top" Width="245"/>
+        <ListBox HorizontalAlignment="Left" Height="142" Margin="628,259,0,0" VerticalAlignment="Top" Width="133">
+            <ListBoxItem Content="Apfel"/>
+            <ListBoxItem Content="Birne"/>
+            <ListBoxItem Content="Banane"/>
+            <Button Content="Button in der Liste"/>
+            <TextBox Width="100"/>
+            <ComboBoxItem Content="Gurke"/>
+        </ListBox>
 
 
     </Grid>
