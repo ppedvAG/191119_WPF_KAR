@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Button Content="Klick mich !" HorizontalAlignment="Left" Margin="85,80,0,0" VerticalAlignment="Top" Width="359" Height="121" FontFamily="Showcard Gothic" FontSize="48" Click="Button_Click"/>
+
     </Grid>
 </Window>
