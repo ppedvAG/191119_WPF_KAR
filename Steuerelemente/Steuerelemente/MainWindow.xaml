@@ -5,8 +5,41 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Steuerelemente"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Steuerelemente" Height="450" Width="800">
     <Grid>
-        
+        <Label BorderBrush="Black" BorderThickness="2" Content="Das ist eine Beschriftung ..." HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="160"/>
+        <TextBlock Text="Auch das ist eine Beschriftung" HorizontalAlignment="Left" Margin="10,44,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="201"/>
+        <Button Content="Klick mich !!!" HorizontalAlignment="Left" Margin="10,77,0,0" VerticalAlignment="Top" Width="160"/>
+        <Button HorizontalAlignment="Left" Margin="10,101,0,0" VerticalAlignment="Top" Width="160">
+            <Button.Content>
+                <TextBox Width="150" Text="Macht das Sinn ?"/>
+            </Button.Content>
+        </Button>
+        <PasswordBox HorizontalAlignment="Left" Margin="10,127,0,0" VerticalAlignment="Top" Width="160"/>
+        <RichTextBox HorizontalAlignment="Left" Height="100" Margin="10,149,0,0" VerticalAlignment="Top" Width="160">
+            <FlowDocument>
+                <Paragraph>
+                    <Run Text="RichTextBox"/>
+                    <LineBreak/>
+                    <Run Text="Zweite Zeile"/>
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+        <Image 
+            Source="https://www.welt.de/img/satire/mobile157797260/9052508247-ci102l-w1024/a-Golden-Hamster-Standing-on-a-Flower-Pot-Looking-at-Camera-Front-View.jpg"
+            Stretch="UniformToFill"
+            HorizontalAlignment="Left" Height="239" Margin="175,10,0,0" VerticalAlignment="Top" Width="223"/>
+        <Image HorizontalAlignment="Left" Height="154" Margin="10,254,0,0" VerticalAlignment="Top" Width="270" Source="Images/katze.jpg"/>
+        <TextBox
+            AcceptsReturn="True"
+            AcceptsTab="True"
+            TextWrapping="WrapWithOverflow"
+            HorizontalAlignment="Left" Height="106" Margin="403,11,0,0" VerticalAlignment="Top" Width="120">
+            <TextBox.Text>
+                Demo für den Textumbruch
+            </TextBox.Text>
+        </TextBox>
+
+
     </Grid>
 </Window>
