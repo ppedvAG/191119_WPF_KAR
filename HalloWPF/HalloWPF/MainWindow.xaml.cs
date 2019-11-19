@@ -27,6 +27,9 @@ namespace HalloWPF
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            // Fenster auf anderen Bildschrim verschieben:
+            //  this.Top = 0;
+            //  this.Left = -1920; // (2ter Monitor links vom Hauptmonitor)
             MessageBox.Show("Hallo Welt");
         }
     }

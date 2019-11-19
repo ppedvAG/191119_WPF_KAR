@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HalloWPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen"
+        >
     <Grid>
         <Button Content="Klick mich !" HorizontalAlignment="Left" Margin="85,80,0,0" VerticalAlignment="Top" Width="359" Height="121" FontFamily="Showcard Gothic" FontSize="48" Click="Button_Click"/>
 
