@@ -6,8 +6,8 @@
         xmlns:local="clr-namespace:HalloWPF"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen"
-        Background="Orange">
-    <Grid>
+        >
+    <Grid PreviewMouseDown="GridOrangeMouseDown" Background="Orange">
         <Button 
                 HorizontalAlignment="Left"
                 Margin="20"
@@ -35,7 +35,11 @@
             </Button.Background>
         </Button>
         <TextBox x:Name="textBoxEingabe" HorizontalAlignment="Left" Height="23" Margin="20,88,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="159" TextChanged="textBoxEingabe_TextChanged"/>
-
+        <Grid PreviewMouseDown="GridSalmonMouseDown" Background="Salmon" HorizontalAlignment="Left" Height="209" Margin="321,20,0,0" VerticalAlignment="Top" Width="320">
+            <Grid PreviewMouseDown="GridBlauMouseDown" Background="Blue" HorizontalAlignment="Left" Height="130" Margin="30,23,0,0" VerticalAlignment="Top" Width="238">
+                <TextBox MouseDown="textBoxMouseDoubleClick" HorizontalAlignment="Left" Height="23" Margin="101,74,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+            </Grid>
+        </Grid>
 
     </Grid>
 </Window>

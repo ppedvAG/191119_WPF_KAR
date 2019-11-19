@@ -44,5 +44,31 @@ namespace HalloWPF
         {
             MessageBox.Show(textBoxEingabe.Text);
         }
+
+        private void textBoxMouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            MessageBox.Show("Klick auf die Textbox");
+        }
+
+        private void GridBlauMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            // F12 für das Erstellen eines Events aus XAML heraus
+            MessageBox.Show("Klick auf blaues Grid");
+        }
+
+        private void GridSalmonMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            e.Handled = true; // Event nicht mehr weiterreichen
+            MessageBox.Show("Klick auf Salmon Grid");
+
+        }
+
+        private void GridOrangeMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            // MouseDown funktioniert im Root-Grid (hier gridOrange) nur, wenn das Grid eine Hintergrundfarbe hat
+            // Wenn das Grid keine Hintergrundfarbe hat (z.B. Standardwert null bzw "Transparent"), reagiert das Grid nicht auf das "MouseDown" - Event !!!
+
+            MessageBox.Show("Klick auf orangenes Grid");
+        }
     }
 }
