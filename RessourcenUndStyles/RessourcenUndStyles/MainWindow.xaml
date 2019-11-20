@@ -26,6 +26,16 @@
             <Setter Property="FontFamily" Value="Harlow Solid Italic"/>
         </Style>
 
+        <!-- Expliziter Style -->
+        <Style TargetType="Button" x:Key="YellowButtonStyle">
+            <Setter Property="Background" Value="LightGoldenrodYellow"/>
+            <Setter Property="Foreground" Value="Yellow"/>
+            <Setter Property="BorderBrush" Value="GreenYellow"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="FontSize" Value="25"/>
+            <Setter Property="FontFamily" Value="Comic Sans MS"/>
+        </Style>
+
         <!-- Impliziter Style -->
         <Style TargetType="Button">
             <Setter Property="Background" Value="IndianRed"/>
@@ -70,7 +80,7 @@
 
 
                 <Button Style="{StaticResource BlueButtonStyle}" Content="Button mit Style" HorizontalAlignment="Left" Margin="291,39,0,0" VerticalAlignment="Top" Width="222" Height="45"/>
-                <Button Style="{StaticResource BlueButtonStyle}" Content="Button mit Style" HorizontalAlignment="Left" Margin="291,100,0,0" VerticalAlignment="Top" Width="222" Height="45"/>
+                <Button x:Name="buttonStyleToggle" Style="{StaticResource BlueButtonStyle}" Content="Button mit Style" HorizontalAlignment="Left" Margin="291,100,0,0" VerticalAlignment="Top" Width="222" Height="45" Click="Button_Click_1"/>
                 <Button Content="Button mit Style" HorizontalAlignment="Left" Margin="291,159,0,0" VerticalAlignment="Top" Width="222" Height="45"/>
 
 

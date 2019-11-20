@@ -33,5 +33,10 @@ namespace RessourcenUndStyles
             else
                 buttonFarbwechsel.Background = (SolidColorBrush)this.Resources["Farbe2"];
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            buttonStyleToggle.Style = (Style)this.Resources["YellowButtonStyle"];
+        }
     }
 }
