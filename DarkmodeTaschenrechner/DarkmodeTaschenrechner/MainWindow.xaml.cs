@@ -24,5 +24,30 @@ namespace DarkmodeTaschenrechner
         {
             InitializeComponent();
         }
+
+        bool isDarkMode = false;
+
+        private void imageMode_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            // Toggle-Logik
+            if(isDarkMode)
+            {
+                this.Resources["CurrentButtonStyle"] = this.Resources["DarkButtonStyle"]; 
+                this.Resources["CurrentTextBoxStyle"] = this.Resources["DarkTextBoxStyle"]; 
+                this.Resources["CurrentLabelStyle"] = this.Resources["DarkLabelStyle"];
+                this.Resources["CurrentWindowStyle"] = this.Resources["DarkWindowStyle"];
+
+                isDarkMode = false;
+            }
+            else
+            {
+                this.Resources["CurrentButtonStyle"] = this.Resources["LightButtonStyle"];
+                this.Resources["CurrentTextBoxStyle"] = this.Resources["LightTextBoxStyle"];
+                this.Resources["CurrentLabelStyle"] = this.Resources["LightLabelStyle"];
+                this.Resources["CurrentWindowStyle"] = this.Resources["LightWindowStyle"];
+
+                isDarkMode = true;
+            }
+        }
     }
 }

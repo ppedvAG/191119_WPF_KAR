@@ -89,7 +89,7 @@
 
         <Label Content="Ergebnis:" Grid.Row="3" Grid.Column="0"/>
         <TextBox x:Name="textBoxErgebnis" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3"/>
-        <Image x:Name="imageMode" Height="50" Width="50" Grid.Row="4" Grid.Column="3"/>
+        <Image MouseDown="imageMode_MouseDown" Source="https://www.kramsen.com/images/product_images/info_images/Gluehbirne-LED-Globe-wei.jpg" x:Name="imageMode" Height="50" Width="50" Grid.Row="4" Grid.Column="3"/>
         
     </Grid>
 </Window>
