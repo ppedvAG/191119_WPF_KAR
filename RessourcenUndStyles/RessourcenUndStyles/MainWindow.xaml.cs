@@ -24,5 +24,14 @@ namespace RessourcenUndStyles
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Random r = new Random();
+            if(r.Next(0,2) % 2 == 1)
+                buttonFarbwechsel.Background = (SolidColorBrush)this.Resources["Farbe1"];
+            else
+                buttonFarbwechsel.Background = (SolidColorBrush)this.Resources["Farbe2"];
+        }
     }
 }

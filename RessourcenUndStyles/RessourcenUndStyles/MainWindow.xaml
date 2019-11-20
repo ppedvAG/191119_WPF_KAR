@@ -6,7 +6,45 @@
         xmlns:local="clr-namespace:RessourcenUndStyles"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+    <Window.Resources>
+        <LinearGradientBrush x:Key="CoolerFarbverlauf">
+            <GradientStop Offset="0" Color="DarkOrange"/>
+            <GradientStop Offset="0.5" Color="DarkCyan"/>
+            <GradientStop Offset="1" Color="Crimson"/>
+        </LinearGradientBrush>
+
+        <SolidColorBrush x:Key="Farbe1" Color="Yellow"/>
+        <SolidColorBrush x:Key="Farbe2" Color="Green"/>
+
+    </Window.Resources>
+    
+    <Grid Background="DodgerBlue">
+        <Grid Background="HotPink" HorizontalAlignment="Left" Height="325" Margin="51,31,0,0" VerticalAlignment="Top" Width="681">
+            <Grid Background="FloralWhite" HorizontalAlignment="Left" Height="235" Margin="62,27,0,0" VerticalAlignment="Top" Width="547">
+                <Grid.Resources>
+                    <RadialGradientBrush x:Key="CoolerFarbverlauf">
+                        <GradientStop Offset="0" Color="GreenYellow"/>
+                        <GradientStop Offset="0.5" Color="Firebrick"/>
+                        <GradientStop Offset="1" Color="LightYellow"/>
+                    </RadialGradientBrush>
+                </Grid.Resources>
+
+                <Button Content="Button" Background="{StaticResource CoolerFarbverlauf}" Foreground="Orange" FontFamily="Comic Sans MS" FontSize="30" HorizontalAlignment="Left" Margin="82,39,0,0" VerticalAlignment="Top" Width="160"/>
+                <Button Content="Button" Background="{DynamicResource CoolerFarbverlauf}" Foreground="Orange" FontFamily="Comic Sans MS" FontSize="30" HorizontalAlignment="Left" Margin="82,100,0,0" VerticalAlignment="Top" Width="160">
+                    <Button.Resources>
+                        <SolidColorBrush x:Key="CoolerFarbverlauf" Color="Blue"/>
+                    </Button.Resources>
+                </Button>
+                <Button x:Name="buttonFarbwechsel" Content="Button" Background="Red" Foreground="Orange" FontFamily="Comic Sans MS" FontSize="30" HorizontalAlignment="Left" Margin="82,159,0,0" VerticalAlignment="Top" Width="160" Click="Button_Click"/>
+
+
+            </Grid>
+            
+            <Button Content="Button im HotPink-Grid"
+                    Background="{StaticResource CoolerFarbverlauf}" Foreground="Wheat"
+                    HorizontalAlignment="Left" Margin="127,291,0,0" VerticalAlignment="Top" Width="308"/>
+
+
+        </Grid>
     </Grid>
 </Window>

@@ -4,6 +4,10 @@
              xmlns:local="clr-namespace:RessourcenUndStyles"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <LinearGradientBrush x:Key="CoolerFarbverlauf">
+            <GradientStop Offset="0" Color="FloralWhite"/>
+            <GradientStop Offset="0.5" Color="Goldenrod"/>
+            <GradientStop Offset="1" Color="FloralWhite"/>
+        </LinearGradientBrush>
     </Application.Resources>
 </Application>
