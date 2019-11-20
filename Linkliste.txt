@@ -2,3 +2,8 @@ Email: MichaelZ@ppedv.at   /.de
 
 Title in WPF mittig ausrichten:
 https://docs.microsoft.com/en-us/dotnet/api/system.windows.shell.windowchrome?redirectedfrom=MSDN&view=netframework-4.8
+
+Pack-URI: Anleitung und Doku:
+https://docs.microsoft.com/de-de/dotnet/framework/wpf/app-development/pack-uris-in-wpf
+
+Ressourcendatei – Assembly, auf die verwiesen wird	"pack://application:,,,/ReferencedAssembly;component/ResourceFile.xaml"

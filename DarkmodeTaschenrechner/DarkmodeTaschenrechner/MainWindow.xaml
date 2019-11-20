@@ -13,7 +13,12 @@
         <!-- ResourceDictionary aus einer anderen Datei einbinden: -->
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="MeinDict.xaml"/>
+                <!-- Dict im eigenen Projekt-->
+                <!-- ResourceDictionary Source="MeinDict.xaml"/ -->
+                
+                <!-- Dict aus einer DLL (MeineRessourcen.dll) -->
+                <!-- https://docs.microsoft.com/de-de/dotnet/framework/wpf/app-development/pack-uris-in-wpf -->
+                <ResourceDictionary Source="pack://application:,,,/MeineRessourcen;component/DLLDict.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
 
