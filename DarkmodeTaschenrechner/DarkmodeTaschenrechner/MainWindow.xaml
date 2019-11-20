@@ -19,6 +19,11 @@
                 <!-- Dict aus einer DLL (MeineRessourcen.dll) -->
                 <!-- https://docs.microsoft.com/de-de/dotnet/framework/wpf/app-development/pack-uris-in-wpf -->
                 <ResourceDictionary Source="pack://application:,,,/MeineRessourcen;component/DLLDict.xaml"/>
+                <!-- ResourceDictionary Source="MeinDict.xaml"/-->
+                
+                <!-- Wichtig: bei mehreren Dictionaries ist die Reihenfolge relevant !!! (letztes Dict überschreibt die vorherigen)-->
+                
+                
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
 
