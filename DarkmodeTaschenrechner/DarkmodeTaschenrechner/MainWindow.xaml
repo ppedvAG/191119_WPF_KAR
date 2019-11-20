@@ -6,6 +6,61 @@
         xmlns:local="clr-namespace:DarkmodeTaschenrechner"
         mc:Ignorable="d"
         Title="Taschenrechner" Height="450" Width="300">
+    <Window.Resources>
+        <!-- Platzhalter - Styles (werden später als DynamicResource zugewiesen !!!)  -->
+        <Style TargetType="Button"  x:Key="CurrentButtonStyle"/>
+        <Style TargetType="TextBox" x:Key="CurrentTextBoxStyle"/>
+        <Style TargetType="Label"   x:Key="CurrentLabelStyle"/>
+        
+        <!-- Echte Styles (werden im Code zugewiesen) -->
+        <Style TargetType="Button" x:Key="DarkButtonStyle" >
+            <Setter Property="Background" Value="SlateGray"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="FontSize" Value="20"/>
+        </Style>
+        <Style TargetType="Button" x:Key="LightButtonStyle">
+            <Setter Property="Background" Value="GhostWhite"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="FontSize" Value="20"/>
+        </Style>
+
+        <Style TargetType="TextBox" x:Key="DarkTextBoxStyle">
+            <Setter Property="Background" Value="SlateGray"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="FontSize" Value="20"/>
+        </Style>
+        <Style TargetType="TextBox" x:Key="LightTextBoxStyle">
+            <Setter Property="Background" Value="GhostWhite"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="FontSize" Value="20"/>
+        </Style>
+
+        <Style TargetType="Label" x:Key="DarkLabelStyle">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="20"/>
+        </Style>
+        <Style TargetType="Label" x:Key="LightLabelStyle">
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontSize" Value="20"/>
+        </Style>
+
+        <Style TargetType="Window" x:Key="DarkWindowStyle">
+            <Setter Property="Background" Value="DarkGray"/>
+        </Style>
+        <Style TargetType="Window" x:Key="LightWindowStyle">
+            <Setter Property="Background" Value="WhiteSmoke"/>
+        </Style>
+        
+    </Window.Resources>
+    
+    
+    
+    
+    
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -35,5 +90,6 @@
         <Label Content="Ergebnis:" Grid.Row="3" Grid.Column="0"/>
         <TextBox x:Name="textBoxErgebnis" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3"/>
         <Image x:Name="imageMode" Height="50" Width="50" Grid.Row="4" Grid.Column="3"/>
+        
     </Grid>
 </Window>
