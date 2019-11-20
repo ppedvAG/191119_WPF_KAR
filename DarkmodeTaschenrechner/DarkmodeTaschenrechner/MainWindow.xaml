@@ -58,6 +58,21 @@
         <Label Style="{DynamicResource CurrentLabelStyle}" Content="Ergebnis:" Grid.Row="3" Grid.Column="0"/>
         <TextBox Style="{DynamicResource CurrentTextBoxStyle}" x:Name="textBoxErgebnis" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3"/>
         <Image MouseDown="imageMode_MouseDown" Source="https://www.kramsen.com/images/product_images/info_images/Gluehbirne-LED-Globe-wei.jpg" x:Name="imageMode" Height="50" Width="50" Grid.Row="4" Grid.Column="3"/>
-        
+
+
+        <Button Content="Klick mich !" x:Name="templateButton" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="4" Margin="10">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Height="40" Width="100" Background="Orange" BorderThickness="2" BorderBrush="Black" CornerRadius="20">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Height="20" Width="20" Margin="3,0,3,0" Source="https://cdn2.iconfinder.com/data/icons/social-productivity-line-art-1/128/face-happy-512.png"/>
+                            <!-- Platzhalter für alles, was nachher im Button in "Content" drinnensteht -->
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
     </Grid>
 </Window>
