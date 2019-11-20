@@ -5,13 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DarkmodeTaschenrechner"
         mc:Ignorable="d"
-        Title="Taschenrechner" Height="450" Width="300">
+        Title="Taschenrechner" Height="450" Width="300"
+        Style="{DynamicResource CurrentWindowStyle }"
+        Loaded="Window_Loaded">
     <Window.Resources>
         <!-- Platzhalter - Styles (werden später als DynamicResource zugewiesen !!!)  -->
         <Style TargetType="Button"  x:Key="CurrentButtonStyle"/>
         <Style TargetType="TextBox" x:Key="CurrentTextBoxStyle"/>
         <Style TargetType="Label"   x:Key="CurrentLabelStyle"/>
-        
+        <Style TargetType="Window"   x:Key="CurrentWindowStyle"/>
+
         <!-- Echte Styles (werden im Code zugewiesen) -->
         <Style TargetType="Button" x:Key="DarkButtonStyle" >
             <Setter Property="Background" Value="SlateGray"/>
@@ -54,13 +57,9 @@
         <Style TargetType="Window" x:Key="LightWindowStyle">
             <Setter Property="Background" Value="WhiteSmoke"/>
         </Style>
-        
+
     </Window.Resources>
-    
-    
-    
-    
-    
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -75,20 +74,20 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
+ 
+        <Label Style="{DynamicResource CurrentLabelStyle}" Content="Zahl1 " Grid.Row="0" Grid.Column="0"/>
+        <Label Style="{DynamicResource CurrentLabelStyle}" Content="Zahl2: " Grid.Row="1" Grid.Column="0"/>
 
-        <Label Content="Zahl1 " Grid.Row="0" Grid.Column="0"/>
-        <Label Content="Zahl2: " Grid.Row="1" Grid.Column="0"/>
+        <TextBox Style="{DynamicResource CurrentTextBoxStyle}" x:Name="textBoxZahl1" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" Margin="2"/>
+        <TextBox Style="{DynamicResource CurrentTextBoxStyle}" x:Name="textBoxZahl2" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" Margin="2"/>
 
-        <TextBox x:Name="textBoxZahl1" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" Margin="2"/>
-        <TextBox x:Name="textBoxZahl2" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" Margin="2"/>
+        <Button Style="{DynamicResource CurrentButtonStyle}" x:Name="buttonAdd" Content="+" Grid.Row="2" Grid.Column="0"/>
+        <Button Style="{DynamicResource CurrentButtonStyle}" x:Name="buttonSub" Content="-" Grid.Row="2" Grid.Column="1"/>
+        <Button Style="{DynamicResource CurrentButtonStyle}" x:Name="buttonMul" Content="*" Grid.Row="2" Grid.Column="2"/>
+        <Button Style="{DynamicResource CurrentButtonStyle}" x:Name="buttonDiv" Content="/" Grid.Row="2" Grid.Column="3"/>
 
-        <Button x:Name="buttonAdd" Content="+" Grid.Row="2" Grid.Column="0"/>
-        <Button x:Name="buttonSub" Content="-" Grid.Row="2" Grid.Column="1"/>
-        <Button x:Name="buttonMul" Content="*" Grid.Row="2" Grid.Column="2"/>
-        <Button x:Name="buttonDiv" Content="/" Grid.Row="2" Grid.Column="3"/>
-
-        <Label Content="Ergebnis:" Grid.Row="3" Grid.Column="0"/>
-        <TextBox x:Name="textBoxErgebnis" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3"/>
+        <Label Style="{DynamicResource CurrentLabelStyle}" Content="Ergebnis:" Grid.Row="3" Grid.Column="0"/>
+        <TextBox Style="{DynamicResource CurrentTextBoxStyle}" x:Name="textBoxErgebnis" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3"/>
         <Image MouseDown="imageMode_MouseDown" Source="https://www.kramsen.com/images/product_images/info_images/Gluehbirne-LED-Globe-wei.jpg" x:Name="imageMode" Height="50" Width="50" Grid.Row="4" Grid.Column="3"/>
         
     </Grid>

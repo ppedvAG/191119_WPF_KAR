@@ -49,5 +49,16 @@ namespace DarkmodeTaschenrechner
                 isDarkMode = true;
             }
         }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            // Applikation im LightMode - Starten
+            this.Resources["CurrentButtonStyle"] = this.Resources["LightButtonStyle"];
+            this.Resources["CurrentTextBoxStyle"] = this.Resources["LightTextBoxStyle"];
+            this.Resources["CurrentLabelStyle"] = this.Resources["LightLabelStyle"];
+            this.Resources["CurrentWindowStyle"] = this.Resources["LightWindowStyle"];
+
+            isDarkMode = true;
+        }
     }
 }
