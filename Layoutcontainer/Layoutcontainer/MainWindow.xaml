@@ -5,8 +5,113 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Layoutcontainer"
         mc:Ignorable="d"
-        Title="Layoutcontainer" Height="450" Width="800">
+        Title="Layoutcontainer" Height="528.4" Width="800">
     <Grid>
-        
+        <Canvas Background="Ivory" HorizontalAlignment="Left" Height="152" Margin="10,17,0,0" VerticalAlignment="Top" Width="213">
+            <Button Content="Button in einem Canvas"
+                    Canvas.Left="30"
+                    Canvas.Top="50"/>
+            <Rectangle Fill="Salmon" Height="50" Width="50"
+                       Canvas.Top="80" Canvas.Left="50"/>
+        </Canvas>
+        <StackPanel Orientation="Vertical" Background="LightSalmon" HorizontalAlignment="Left" Height="115" Margin="267,17,0,0" VerticalAlignment="Top" Width="143">
+            <Label Content="Username:"/>
+            <TextBox/>
+            <Label Content="Passwort:"/>
+            <PasswordBox/>
+        </StackPanel>
+        <WrapPanel Background="LightGoldenrodYellow" Height="100" Margin="450,20,50,0" VerticalAlignment="Top">
+            <Button Content="Button 1" Margin="5"/>
+            <Button Content="Button 1" Margin="5"/>
+            <Button Content="Button 1" Margin="5"/>
+            <Button Content="Button 1" Margin="5"/>
+            <Button Content="Button 1" Margin="5"/>
+            <Button Content="Button 1"/>
+            <Button Content="Button 1"/>
+            <Button Content="Button 1"/>
+            <Button Content="Button 1"/>
+            <Button Content="Button 1"/>
+        </WrapPanel>
+
+        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalAlignment="Left" Height="100" Margin="10,184,0,0" VerticalAlignment="Top" Width="213">
+            <StackPanel Background="DarkBlue">
+                <Button Content="Button 2"/>
+                <Button Content="Button 2"/>
+                <Button Content="Button 2"/>
+                <Button Content="Button 2"/>
+                <Button Content="Button 2"/>
+                <Button Content="Button 2"/>
+                <Button Content="Button 2"/>
+                <Button Content="Button 2"/>
+                <Button Content="Button 2"/>
+                <Button Content="Button 2"/>
+            </StackPanel>
+        </ScrollViewer>
+        <Viewbox Margin="239,138,433,259.8">
+            <Button Content="Groß"/>
+        </Viewbox>
+
+        <DockPanel Background="LimeGreen" LastChildFill="False" Margin="428,125,50,212.8">
+            <StackPanel Background="MediumAquamarine" DockPanel.Dock="Left" Width="50">
+                <Label Content="Link 1"/>
+                <Label Content="Link 2"/>
+                <Label Content="Link 3"/>
+                <Label Content="Link 4"/>
+                <Label Content="Link 5"/>
+            </StackPanel>
+            <WrapPanel Background="OliveDrab" DockPanel.Dock="Top" Height="40">
+                <Button Content="Klick 1"/>
+                <Button Content="Klick 1"/>
+                <Button Content="Klick 1"/>
+                <Button Content="Klick 1"/>
+                <Button Content="Klick 1"/>
+                <Button Content="Klick 1"/>
+                <Button Content="Klick 1"/>
+            </WrapPanel>
+            <Rectangle Fill="OldLace" DockPanel.Dock="Right" Width="200"/>
+        </DockPanel>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="100" Margin="10,289,0,0" VerticalAlignment="Top" Width="170">
+            <StackPanel>
+                <Button Content="Button im Stack im Border"/>
+                <Button Content="Button im Stack im Border"/>
+                <Button Content="Button im Stack im Border"/>
+                <Button Content="Button im Stack im Border"/>
+            </StackPanel>
+        </Border>
+        <!-- Spezialborder :-->
+        <GroupBox Header="Optionen" HorizontalAlignment="Left" Height="100" Margin="199,289,0,0" VerticalAlignment="Top" Width="100">
+            <StackPanel>
+                <CheckBox Content="Option 1"/>
+                <CheckBox Content="Option 2"/>
+                <CheckBox Content="Option 3"/>
+            </StackPanel>
+        </GroupBox>
+        <Grid Background="DarkCyan" HorizontalAlignment="Left" Height="186" Margin="333,301,0,0" VerticalAlignment="Top" Width="438">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" MaxWidth="100"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Content="Vorname:" Grid.Row="0" Grid.Column="0" Foreground="White"/>
+            <Label Content="Nachname:" Grid.Row="1" Grid.Column="0" Foreground="White"/>
+            <Label Content="Alter:" Grid.Row="2" Grid.Column="0" Foreground="White"/>
+            <Label Content="Kontostand:" Grid.Row="3" Grid.Column="0" Foreground="White"/>
+
+
+            <Button Content="Klick mich"
+                    Grid.Column="1"
+                    Grid.Row="1"/>
+
+        </Grid>
+
+
+
     </Grid>
 </Window>
