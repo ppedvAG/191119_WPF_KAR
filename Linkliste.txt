@@ -1,1 +1,4 @@
 Email: MichaelZ@ppedv.at   /.de 
+
+Title in WPF mittig ausrichten:
+https://docs.microsoft.com/en-us/dotnet/api/system.windows.shell.windowchrome?redirectedfrom=MSDN&view=netframework-4.8
