@@ -40,6 +40,12 @@ namespace Binding_Demo
         {
             // return $"{values[0]} {values[1]}";
             return values[0].ToString() + " " + values[1].ToString();
+
+            byte rot = System.Convert.ToByte(values[0]);
+            byte grün = System.Convert.ToByte(values[1]);
+            byte blau = System.Convert.ToByte(values[2]);
+            return new SolidColorBrush(Color.FromRgb(rot, grün, blau));
+
         }
 
         public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)
