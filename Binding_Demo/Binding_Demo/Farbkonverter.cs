@@ -47,4 +47,20 @@ namespace Binding_Demo
             throw new NotImplementedException();
         }
     }
+
+
+    // Beispiel für Parameter in einem Binding
+    //class FaktorConverter : IValueConverter
+    //{
+    //    public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+    //    {
+    //        int zahl = (int)value;
+    //        return zahl * (int)parameter; // Einmal mit *2 und einmal mit *100 rechnen ;)
+    //    }
+
+    //    public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+    //    {
+    //        throw new NotImplementedException();
+    //    }
+    //}
 }

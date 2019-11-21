@@ -38,7 +38,7 @@
         <Label HorizontalAlignment="Left" Margin="358,132,0,0" VerticalAlignment="Top" Width="120">
             <Label.Content>
                 <MultiBinding Converter="{StaticResource textkonverter}">
-                    <Binding ElementName="textBoxVorname" Path="Text"/>
+                    <Binding ElementName="textBoxVorname"  Path="Text"/>
                     <Binding ElementName="textBoxNachname" Path="Text"/>
                 </MultiBinding>
             </Label.Content>
