@@ -4,10 +4,23 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:View"
+        
+        xmlns:vm="clr-namespace:ViewModel;assembly=ViewModel"
+        
         mc:Ignorable="d"
         Title="Personenverwaltung" Height="288" Width="260">
+    <!-- Namespace einbinden:
+         xmlns:DeinNameFreiWählbar = "
+           Danach im DropDown-Menü den Namespace wählen, z.B. "ViewModel" tippen
+           TAB - TASTE
+           Fertig ;) -->
+    
+    
+    <Window.DataContext>
+        <vm:MainViewModel/>
+    </Window.DataContext>
     <DockPanel>
-        <Button Content="Lade Personen" DockPanel.Dock="Top"/>
-        <ListBox/>
+        <Button Content="Lade Personen" DockPanel.Dock="Top" Command="{Binding GetPeopleCommand}"/>
+        <ListBox ItemsSource="{Binding Personenliste}" />
     </DockPanel>
 </Window>
