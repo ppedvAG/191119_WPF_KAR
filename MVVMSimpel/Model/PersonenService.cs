@@ -23,7 +23,13 @@ namespace Model
 
             // NuGet: AutoFixture
             Fixture fix = new Fixture(); // <--- Konfiguration
-            var personen = fix.CreateMany<Person>(amount).ToList();
+            // var personen = fix.CreateMany<Person>(amount).ToList();
+            var personen =  fix.Build<Person>().With(x => x.Vorname,"Michi")
+                                               .With(x => x.Alter,12)
+                                               .Without(x => x.Kontostand)
+                                               .CreateMany(amount)
+                                               .ToList();
+            // https://github.com/AutoFixture/AutoFixture/wiki/Cheat-Sheet
             return personen;
         }
     }
