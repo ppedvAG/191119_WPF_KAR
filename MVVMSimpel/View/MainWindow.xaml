@@ -21,6 +21,20 @@
     </Window.DataContext>
     <DockPanel>
         <Button Content="Lade Personen" DockPanel.Dock="Top" Command="{Binding GetPeopleCommand}"/>
-        <ListBox ItemsSource="{Binding Personenliste}" />
+        <!--<ListBox DisplayMemberPath="Vorname" ItemsSource="{Binding Personenliste}" />-->
+
+        <ListBox ItemsSource="{Binding Personenliste}">
+            <ListBox.ItemTemplate>
+                <DataTemplate> <!-- Template für Listeneinträge-->
+                    <StackPanel>
+                        <TextBlock Text="{Binding Vorname}"/> <!-- Standarddatenquelle: Objekt, das repräsentiert wird-->
+                        <TextBlock Text="{Binding Nachname}"/>
+                        <TextBlock Text="{Binding Alter}"/>
+                        <TextBlock Text="{Binding Kontostand}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        
     </DockPanel>
 </Window>
