@@ -5,13 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Binding_Demo"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="750">
     <Window.Resources>
         <BooleanToVisibilityConverter x:Key="bool2vis"/>
         <local:Farbkonverter x:Key="farbkonverter"/>
         <local:TextConverter x:Key="textkonverter"/>
+        <Style TargetType="Button" x:Key="SpecialButtonStyle">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="LightSlateGray" BorderBrush="Khaki" BorderThickness="3" CornerRadius="10">
+                            <StackPanel Orientation="Horizontal" Margin="20,0,0,0">
+                                <!-- Rectangle Fill="{Binding RelativeSource={RelativeSource Mode=TemplatedParent},Path=Foreground}" Height="10" Width="10"/-->
+                                <Rectangle Fill="{TemplateBinding Foreground}" Height="10" Width="10"/>
+                                <ContentPresenter VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        
     </Window.Resources>
-    
+
     <Grid>
         <TextBox x:Name="textBoxInhalt"   HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
         <Label   x:Name="labelInhalt"     
@@ -33,9 +49,9 @@
         <CheckBox x:Name="checkBoxTextBoxSichtbar" Content="Sichtbare Textbox ?" HorizontalAlignment="Left" Margin="422,12,0,0" VerticalAlignment="Top" Width="127"/>
         <TextBox x:Name="textBoxFarbe2" HorizontalAlignment="Left" Height="23" Margin="10,116,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
         <Rectangle Fill="{Binding ElementName=textBoxFarbe2,Path=Text,Converter={StaticResource farbkonverter}}" HorizontalAlignment="Left" Height="100" Margin="10,144,0,0" Stroke="Black" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="textBoxVorname" HorizontalAlignment="Left" Height="23" Margin="215,116,0,0" TextWrapping="Wrap" Text="Vorname" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="textBoxNachname" HorizontalAlignment="Left" Height="23" Margin="215,150,0,0" TextWrapping="Wrap" Text="Nachname" VerticalAlignment="Top" Width="120"/>
-        <Label HorizontalAlignment="Left" Margin="358,132,0,0" VerticalAlignment="Top" Width="120">
+        <TextBox x:Name="textBoxVorname" HorizontalAlignment="Left" Height="23" Margin="149,116,0,0" TextWrapping="Wrap" Text="Vorname" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="textBoxNachname" HorizontalAlignment="Left" Height="23" Margin="149,151,0,0" TextWrapping="Wrap" Text="Nachname" VerticalAlignment="Top" Width="120"/>
+        <Label HorizontalAlignment="Left" Margin="274,133,0,0" VerticalAlignment="Top" Width="149">
             <Label.Content>
                 <MultiBinding Converter="{StaticResource textkonverter}">
                     <Binding ElementName="textBoxVorname"  Path="Text"/>
@@ -43,6 +59,50 @@
                 </MultiBinding>
             </Label.Content>
         </Label>
+
+
+
+        <Slider x:Name="sliderEigenschaft" HorizontalAlignment="Left" Margin="395,101,0,0" VerticalAlignment="Top" Width="202"/>
+
+        <!-- Standarddatenquelle für Bindings: DataContext-->
+        <StackPanel DataContext="{x:Reference Name=sliderEigenschaft}" Background="DarkSeaGreen" HorizontalAlignment="Left" Height="143" Margin="611,101,0,0" VerticalAlignment="Top" Width="116">
+            <Label Content="{Binding Minimum}"/>
+            <Label Content="{Binding Value}"/>
+            <Label Content="{Binding Maximum}"/>
+            <Label Content="{Binding ActualHeight}"/>
+
+            <StackPanel Background="Red" DataContext="{x:Reference Name=textBoxInhalt}">
+                <TextBlock Text="{Binding ActualWidth}"/>
+            </StackPanel>
+
+            <Label Content="{Binding ActualWidth}"/>
+        </StackPanel>
+
+        <Rectangle Fill="#FFF4F4F5"
+                   HorizontalAlignment="Left"
+                   Height="50"
+                   Width="{Binding RelativeSource={RelativeSource Mode=Self},Path=Height}"
+                   Margin="45,273,0,0"
+                   Stroke="Black"
+                   VerticalAlignment="Top"/>
+        <Grid Background="LemonChiffon" HorizontalAlignment="Left" Height="147" Margin="181,261,0,0" VerticalAlignment="Top" Width="170">
+            <Grid Background="HotPink" HorizontalAlignment="Left" Height="107" Margin="33,30,0,0" VerticalAlignment="Top" Width="127">
+                <Grid Background="DarkTurquoise" HorizontalAlignment="Left" Height="58" Margin="17,18,0,0" VerticalAlignment="Top" Width="90">
+                    <Button Margin="10" Content="Demo"
+                            Foreground="{Binding RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Grid,AncestorLevel=1},Path=Background}"/>
+                </Grid>
+            </Grid>
+        </Grid>
+        <Button Style="{StaticResource SpecialButtonStyle}"
+                Content="Klick mich !"
+                HorizontalAlignment="Left"
+                Margin="422,303,0,0"
+                VerticalAlignment="Top"
+                Width="200"
+                Height="50"
+                Foreground="White"/>
+
+
 
     </Grid>
 </Window>
