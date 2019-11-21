@@ -5,8 +5,66 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Blend_Demo"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="548">
+    <Window.Resources>
+        <Style TargetType="Button" x:Key="RedButtonStyle">
+            <Setter Property="Background" Value="Red"/>
+        </Style>
+        <Storyboard x:Key="Animation1">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="button">
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="35.2"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="button">
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="182"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="button">
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="180.086"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </Window.Resources>
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="button">
+            <BeginStoryboard Storyboard="{StaticResource Animation1}"/>
+        </EventTrigger>
+    </Window.Triggers>
     <Grid>
-        
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="1.064,1.101" StartPoint="-0.435,-0.922">
+                <LinearGradientBrush.RelativeTransform>
+                    <TransformGroup>
+                        <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                        <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                        <RotateTransform CenterY="0.5" CenterX="0.5"/>
+                        <TranslateTransform X="0.006" Y="0.287"/>
+                    </TransformGroup>
+                </LinearGradientBrush.RelativeTransform>
+                <GradientStop Color="#FFEBFF00" Offset="0.008"/>
+                <GradientStop Color="#FFFF4949" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Path Data="M253.33333,89.666667 C267.06241,77.653728 271.08767,63.491318 279.2,47.266667 283.44013,51.506795 281.82922,62.700411 282.66667,69.4 283.3708,75.033032 283.1808,82.558409 285.6,87.8 288.5281,94.144212 315.18289,78.2 324.53333,78.2 322.9741,85.99618 312.23635,93.311703 305.6,99 301.3877,102.61054 296.21059,104.99092 292,108.6 283.3796,115.98891 304.29684,137.42351 300,146.73333 299.17233,148.52662 292.10487,141.803&#xD;&#xA;289.33333,138.2 284.51599,131.93746 283.45257,125.23144 280.53333,117.93333 278.63318,113.18295 281.24434,108.0112 271.73333,116.33333 265.17646,122.0706 258.6841,128.10564 250.93333,132.33333 246.05036,134.99677 221.43509,147.69825 249.33333,119.8 258.01943,111.1139 261.96951,118.93577 244,103.53333 238.98556,99.235243 234.78191,93.525967 232,87.266667 231.63109,86.436615 226.61246,77.034342 231.2058,78.182678 238.91491,80.109954&#xD;&#xA;247.56352,84.200651 253.33914,89.649345" HorizontalAlignment="Left" Height="100.765" Margin="156.48,29.606,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="96.253">
+            <Path.Fill>
+                <LinearGradientBrush EndPoint="0.563,0.382" StartPoint="0.078,0.842">
+                    <GradientStop Color="#FF1486F1" Offset="0"/>
+                    <GradientStop Color="#FF00F1FF" Offset="1"/>
+                </LinearGradientBrush>
+            </Path.Fill>
+        </Path>
+        <Path Data="M113.1,78.046006 L113.90635,110.60577 87.100171,75.14601 61.800038,108.94599 60.600003,75.500008 85.500161,103.74582 z" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="36.46" Margin="76.6,75.25,0,0" Stretch="Fill" Stroke="Black" VerticalAlignment="Top" Width="54.306"/>
+        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="123.2,174.266,0,0" VerticalAlignment="Top" Width="75" Height="32.76" RenderTransformOrigin="0.5,0.5">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="323.6,111.71,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="327.867,193.466,0,0" Style="{DynamicResource SimpleButton}" VerticalAlignment="Top" Width="75"/>
+        <CheckBox Content="CheckBox" HorizontalAlignment="Left" Margin="327.867,216.426,0,0" Style="{DynamicResource SimpleCheckBox}" VerticalAlignment="Top"/>
+        <Slider HorizontalAlignment="Left" Margin="327.867,164.786,0,0" Style="{DynamicResource SimpleSlider}" VerticalAlignment="Top" Width="177.6"/>
+
     </Grid>
 </Window>
