@@ -20,7 +20,8 @@ namespace ViewModel
         {
             //Personenliste = service.GetAllPeople();
             Personenliste = service.CreatePeople(1_000);
-            PropertyChanged.Invoke(this, new PropertyChangedEventArgs("Personenliste")); // Sagt dem UI "Hey, Personenliste hat sich verändert -> Aktualisiere das Binding !!!!"
+            if(PropertyChanged != null)
+                PropertyChanged.Invoke(this, new PropertyChangedEventArgs("Personenliste")); // Sagt dem UI "Hey, Personenliste hat sich verändert -> Aktualisiere das Binding !!!!"
         }
 
         private PersonenService service;
