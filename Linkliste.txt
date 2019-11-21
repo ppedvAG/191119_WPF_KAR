@@ -7,3 +7,10 @@ Pack-URI: Anleitung und Doku:
 https://docs.microsoft.com/de-de/dotnet/framework/wpf/app-development/pack-uris-in-wpf
 
 Ressourcendatei – Assembly, auf die verwiesen wird	"pack://application:,,,/ReferencedAssembly;component/ResourceFile.xaml"
+
+MVVM-Frameworks:
+Prism (Microsoft)
+MVVMLight (Galasoft)
+MVVMCross (für mobile Anwendungen (iOS, Android etc...))
+Caliburn 
+... uvm

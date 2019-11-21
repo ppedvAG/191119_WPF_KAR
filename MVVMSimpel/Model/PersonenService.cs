@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using AutoFixture;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Model
 {
@@ -13,6 +15,16 @@ namespace Model
                 new Person{Vorname="Anna",Nachname="Nass",Alter=20,Kontostand=200},
                 new Person{Vorname="Peter",Nachname="Silie",Alter=30,Kontostand=300},
             };
+        }
+
+        public List<Person> CreatePeople(int amount)
+        {
+            // Testdaten generieren:
+
+            // NuGet: AutoFixture
+            Fixture fix = new Fixture(); // <--- Konfiguration
+            var personen = fix.CreateMany<Person>(amount).ToList();
+            return personen;
         }
     }
 }
