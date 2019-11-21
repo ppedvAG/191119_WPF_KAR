@@ -9,8 +9,12 @@ https://docs.microsoft.com/de-de/dotnet/framework/wpf/app-development/pack-uris-
 Ressourcendatei – Assembly, auf die verwiesen wird	"pack://application:,,,/ReferencedAssembly;component/ResourceFile.xaml"
 
 MVVM-Frameworks:
+
 Prism (Microsoft)
 MVVMLight (Galasoft)
 MVVMCross (für mobile Anwendungen (iOS, Android etc...))
 Caliburn 
 ... uvm
+
+Autofixture:
+https://github.com/AutoFixture/AutoFixture/wiki/Cheat-Sheet
