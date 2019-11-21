@@ -6,7 +6,32 @@
         xmlns:local="clr-namespace:Binding_Demo"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="bool2vis"/>
+        <local:Farbkonverter x:Key="farbkonverter"/>
+    </Window.Resources>
+    
     <Grid>
-        
+        <TextBox x:Name="textBoxInhalt"   HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <Label   x:Name="labelInhalt"     
+                 Content="{Binding ElementName=textBoxInhalt,Path=Text}" 
+                 HorizontalAlignment="Left" Margin="10,38,0,0" VerticalAlignment="Top" Width="120"/>
+
+        <Label   x:Name="labelInhalt2"     
+            Content="{Binding Text, ElementName=textBoxInhalt}" 
+            HorizontalAlignment="Left" Margin="10,69,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="textBoxWert" HorizontalAlignment="Left" Height="23" Margin="161,10,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <Slider x:Name="sliderWert" Minimum="0" Maximum="100"
+                Value="{Binding ElementName=textBoxWert,Path=Text,Mode=TwoWay}"
+                HorizontalAlignment="Left" Margin="161,46,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="textBoxFarbe" HorizontalAlignment="Left" Height="23" Margin="297,10,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Visibility="{Binding IsChecked, Converter={StaticResource bool2vis}, ElementName=checkBoxTextBoxSichtbar}"/>
+        <Ellipse
+            Visibility="{Binding ElementName=checkBoxSichtbar,Path=IsChecked,Converter={StaticResource bool2vis}}"
+            Fill="{Binding ElementName=textBoxFarbe,Path=Text,UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="112" Margin="297,38,0,0" Stroke="Black" VerticalAlignment="Top" Width="120"/>
+        <CheckBox x:Name="checkBoxSichtbar" Content="Sichtbar?" HorizontalAlignment="Left" Margin="422,38,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="checkBoxTextBoxSichtbar" Content="Sichtbare Textbox ?" HorizontalAlignment="Left" Margin="422,12,0,0" VerticalAlignment="Top" Width="127"/>
+        <TextBox x:Name="textBoxFarbe2" HorizontalAlignment="Left" Height="23" Margin="10,116,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <Rectangle Fill="{Binding ElementName=textBoxFarbe2,Path=Text,Converter={StaticResource farbkonverter}}" HorizontalAlignment="Left" Height="100" Margin="10,144,0,0" Stroke="Black" VerticalAlignment="Top" Width="120"/>
+
     </Grid>
 </Window>
