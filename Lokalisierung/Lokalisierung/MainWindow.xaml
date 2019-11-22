@@ -5,12 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Lokalisierung"
         mc:Ignorable="d"
-        Title="Login" Height="193.467" Width="240">
+        
+        
+        xmlns:p="clr-namespace:Lokalisierung.Properties"
+        
+        
+        
+        Title="{x:Static p:Resources.windowTitle}" Height="193.467" Width="240">
+    
+    <!-- Resources.resx: Ganz oben in der Mitte den Zugriff auf public stellen !!!!!!!!!!!!! -->
     <StackPanel Margin="10">
-        <Label Content="Benutzername"/>
+        <Label Content="{x:Static p:Resources.labelUsernameText}"/>
         <TextBox/>
-        <Label Content="Passwort:"/>
+        <Label Content="{x:Static p:Resources.labelPasswordText}"/>
         <PasswordBox/>
-        <Button Content="Einloggen"/>
+        <Button Content="{x:Static p:Resources.buttonLoginText}"/>
     </StackPanel>
 </Window>
