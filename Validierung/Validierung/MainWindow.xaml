@@ -10,7 +10,8 @@
         <Label Content="Alter: " HorizontalAlignment="Left" Margin="31,49,0,0" VerticalAlignment="Top" Width="39"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="75,53,0,0" TextWrapping="Wrap"
                  Text="{Binding ElementName=sliderAlter,Path=Value,UpdateSourceTrigger=PropertyChanged}"
-                 VerticalAlignment="Top" Width="180">
+                 VerticalAlignment="Top" Width="180"
+                 ToolTip="{Binding MaximumAge}">
 
             <Validation.ErrorTemplate>
                 <ControlTemplate>
