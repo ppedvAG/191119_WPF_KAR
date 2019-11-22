@@ -35,6 +35,6 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        
+        <TextBox IsUndoEnabled="True" UndoLimit="1000"/>
     </DockPanel>
 </Window>
