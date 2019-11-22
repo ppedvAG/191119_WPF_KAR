@@ -18,7 +18,7 @@ namespace EigeneControls
     /// <summary>
     /// Interaction logic for LabledTextBoxUserControl.xaml
     /// </summary>
-    public partial class LabledTextBoxUserControl : UserControl
+    public partial class LabledTextBoxUserControl : UserControl 
     {
         public LabledTextBoxUserControl()
         {
