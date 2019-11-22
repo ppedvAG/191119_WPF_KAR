@@ -20,9 +20,28 @@ namespace Lokalisierung
     /// </summary>
     public partial class MainWindow : Window
     {
+
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private Grid neuesGrid;
+        public Grid NeuesGrid
+        {
+            get // LazyLoading
+            {
+                // Beim ersten zugriff:
+                if(neuesGrid == null)
+                    neuesGrid = new Grid { Background = Brushes.Red };
+
+                return neuesGrid;
+            }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Content = NeuesGrid;
         }
     }
 }

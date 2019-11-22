@@ -14,11 +14,11 @@
         Title="{x:Static p:Resources.windowTitle}" Height="193.467" Width="240">
     
     <!-- Resources.resx: Ganz oben in der Mitte den Zugriff auf public stellen !!!!!!!!!!!!! -->
-    <StackPanel Margin="10">
+    <StackPanel Margin="10" x:Name="stackPanelDemo">
         <Label Content="{x:Static p:Resources.labelUsernameText}"/>
         <TextBox/>
         <Label Content="{x:Static p:Resources.labelPasswordText}"/>
         <PasswordBox/>
-        <Button Content="{x:Static p:Resources.buttonLoginText}"/>
+        <Button Content="{x:Static p:Resources.buttonLoginText}" Click="Button_Click"/>
     </StackPanel>
 </Window>
