@@ -10,6 +10,7 @@
         <local:LabledTextBoxUserControl LabelText="Vorname:" TextBoxText="Max" HorizontalAlignment="Left" Height="26" Margin="27,28,0,0" VerticalAlignment="Top" Width="286"/>
         <local:LabledTextBoxUserControl LabelText="Nachname:" TextBoxText="Mustermann" HorizontalAlignment="Left" Height="26" Margin="27,59,0,0" VerticalAlignment="Top" Width="286"/>
         <local:LabledTextBoxUserControl LabelText="Alter:" TextBoxText="10" HorizontalAlignment="Left" Height="26" Margin="27,90,0,0" VerticalAlignment="Top" Width="286"/>
-        <local:LabledTextBoxUserControl LabelText="Kontostand:" TextBoxText="1000" HorizontalAlignment="Left" Height="26" Margin="27,121,0,0" VerticalAlignment="Top" Width="286"/>
+        <local:LabledTextBoxUserControl LabelText="Kontostand:" TextBoxText="{Binding ElementName=sliderWert,Path=Value}" HorizontalAlignment="Left" Height="26" Margin="27,121,0,0" VerticalAlignment="Top" Width="286"/>
+        <Slider x:Name="sliderWert" HorizontalAlignment="Left" Margin="27,166,0,0" VerticalAlignment="Top" Width="286"/>
     </Grid>
 </Window>
