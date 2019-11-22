@@ -34,16 +34,19 @@ namespace Validierung
 
         public string Age
         {
-            get { return (string)GetValue(AgeProperty); }
-            set { SetValue(AgeProperty, value); }
+            get
+            {
+                return (string)GetValue(AgeProperty); 
+            }
+            set 
+            {
+                SetValue(AgeProperty, value);
+            }
         }
 
         // Using a DependencyProperty as the backing store for Age.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty AgeProperty =
             DependencyProperty.Register("Age", typeof(string), typeof(AgeTextBox), new PropertyMetadata("0"));
-
-
-
 
         public int MinimumAge
         {
@@ -51,6 +54,7 @@ namespace Validierung
             set 
             { 
                 SetValue(MinimumAgeProperty, value);
+                ageValidationRule.Minimum = MinimumAge;
             }
         }
 
@@ -65,6 +69,7 @@ namespace Validierung
             set 
             { 
                 SetValue(MaximumAgeProperty, value);
+                ageValidationRule.Maximum = MaximumAge;
             }
         }
 

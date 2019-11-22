@@ -28,11 +28,11 @@
 
 
         <local:AgeTextBox MinimumAge="10" MaximumAge="21"  HorizontalAlignment="Left" Height="25" Margin="322,112,0,0" VerticalAlignment="Top" Width="221"/>
-        <local:AgeTextBox MinimumAge="{Binding ElementName=sliderRentenalter,Path=Value}" MaximumAge="122"  HorizontalAlignment="Left" Height="25" Margin="322,162,0,0" VerticalAlignment="Top" Width="221"/>
+        <local:AgeTextBox x:Name="ageTextBoxRenter" MinimumAge="{Binding ElementName=sliderRentenalter,Path=Value}" MaximumAge="122"  HorizontalAlignment="Left" Height="25" Margin="322,162,0,0" VerticalAlignment="Top" Width="221"/>
         <Label Content="Jugendlicher:" HorizontalAlignment="Left" Margin="231,112,0,0" VerticalAlignment="Top"/>
         <Label Content="Renter:" HorizontalAlignment="Left" Margin="259,161,0,0" VerticalAlignment="Top"/>
 
-        <Slider x:Name="sliderRentenalter" Minimum="0" Maximum="122" HorizontalAlignment="Left" Margin="259,209,0,0" VerticalAlignment="Top" Width="284"/>
+        <Slider ValueChanged="sliderRentenalter_ValueChanged" x:Name="sliderRentenalter" Minimum="0" Maximum="122" HorizontalAlignment="Left" Margin="259,209,0,0" VerticalAlignment="Top" Width="284"/>
         <Label Content="{Binding ElementName=sliderRentenalter,Path=Value}" HorizontalAlignment="Left" Margin="548,201,0,0" VerticalAlignment="Top"/>
 
     </Grid>

@@ -24,5 +24,13 @@ namespace Validierung
         {
             InitializeComponent();
         }
+
+        private void sliderRentenalter_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            // Wert wurde geändert -> Irgendwas antriggern
+
+            // Manuell hineinschreiben
+            ageTextBoxRenter.MinimumAge = Convert.ToInt32(sliderRentenalter.Value);
+        }
     }
 }

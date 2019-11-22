@@ -19,9 +19,9 @@ namespace Validierung
             if (Int32.TryParse(value.ToString(), out int age))
             {
                 if (age < Minimum)
-                    return new ValidationResult(false, "Sie sind zu jung");
+                    return new ValidationResult(false, $"Sie sind zu jung (jünger als {Minimum})");
                 else if (age > Maximum)
-                    return new ValidationResult(false, "Sie sind zu alt");
+                    return new ValidationResult(false, $"Sie sind zu alt (älter als {Maximum})");
                 else
                     return new ValidationResult(true, null);
             }
