@@ -18,3 +18,6 @@ Caliburn
 
 Autofixture:
 https://github.com/AutoFixture/AutoFixture/wiki/Cheat-Sheet
+
+RESX-Manager für das einfache Verwalten von der Lokalisierung in WPF:
+https://marketplace.visualstudio.com/items?itemName=TomEnglert.ResXManager
