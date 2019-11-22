@@ -23,6 +23,11 @@ namespace EigeneControls
         public LabledTextBoxUserControl()
         {
             InitializeComponent();
+            this.DataContext = this; // Ich bin meine eigene Standarddatenquelle für Bindings
         }
+
+
+        public string LabelText { get; set; } // Binding mit der Kurzschreibweise
+        public string TextBoxText { get; set; }
     }
 }

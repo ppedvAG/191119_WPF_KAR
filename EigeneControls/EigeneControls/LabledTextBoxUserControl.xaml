@@ -5,9 +5,9 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:EigeneControls"
              mc:Ignorable="d" 
-             d:DesignHeight="30" d:DesignWidth="200">
+             d:DesignHeight="30" d:DesignWidth="200" >
     <DockPanel>
-        <Label Content="Vorname:" DockPanel.Dock="Left"/>
-        <TextBox />
+        <Label Content="{Binding LabelText}" DockPanel.Dock="Left"/>
+        <TextBox Text="{Binding TextBoxText}" />
     </DockPanel>
 </UserControl>
