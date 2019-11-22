@@ -11,8 +11,13 @@ namespace Validierung
 {
     class AgeValidationRule : ValidationRule
     {
+
+        // Ein Objekt vom Typ ValidationRule ist kein Dependency-Object und kann daher
+        // keine DependencyProperties haben !!!!!!!!!!!!!!!!!
         public int Minimum { get; set; }
         public int Maximum { get; set; }
+        // Deswegen die Aktualisierung über das Event in MainWindow.xaml.cs
+
 
         public override ValidationResult Validate(object value, CultureInfo cultureInfo)
         {
