@@ -10,7 +10,20 @@
         <Label Content="Alter: " HorizontalAlignment="Left" Margin="31,49,0,0" VerticalAlignment="Top" Width="39"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="75,53,0,0" TextWrapping="Wrap"
                  Text="{Binding ElementName=sliderAlter,Path=Value,UpdateSourceTrigger=PropertyChanged}"
-                 VerticalAlignment="Top" Width="180"/>
+                 VerticalAlignment="Top" Width="180">
+            
+            <Validation.ErrorTemplate>
+                <ControlTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <!--Platzhalter für die Textbox (ähnlich wie bei Content im Controltemplate)-->
+                        <AdornedElementPlaceholder/>
+                        <TextBlock Text="!" Foreground="Red" VerticalAlignment="Center" FontSize="20"/>
+                    </StackPanel>
+                </ControlTemplate>
+            </Validation.ErrorTemplate>
+            
+            
+        </TextBox>
         <Slider x:Name="sliderAlter" Maximum="99" HorizontalAlignment="Left" Margin="75,81,0,0" VerticalAlignment="Top" Width="180"/>
 
     </Grid>
