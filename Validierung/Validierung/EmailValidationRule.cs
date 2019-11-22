@@ -18,8 +18,6 @@ namespace Validierung
         // 4) Regel in XAML einbauen
         // 5) Error-Template einbauen
 
-
-
         public override ValidationResult Validate(object value, CultureInfo cultureInfo)
         {
             if (string.IsNullOrWhiteSpace(value.ToString()))
